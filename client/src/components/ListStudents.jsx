@@ -13,8 +13,6 @@ export default function ListStudents() {
     const fetchStudents = async () => {
       console.log ("Use Effect ....")
       const response = await axios.get ("http://localhost:4000/students/")
-      console.log (response)
-      console.log (response.data)
       setStudents (response.data)
     }
     fetchStudents();
