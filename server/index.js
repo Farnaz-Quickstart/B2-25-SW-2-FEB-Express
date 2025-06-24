@@ -7,8 +7,8 @@ import enrollmentsRouts from './Routers/enrollments.js'
 
 const app = express();
 
-
-app.use (cors())  // Allow all origins
+app.use (express.json()) // This requied to parse json file
+app.use (cors())         // Allow all origins
 
 
 app.use ('/students', studentsRouts)
@@ -17,7 +17,7 @@ app.use ('/enrollments', enrollmentsRouts)
 
 
 app.get ("/", (req,res)=> {
-  res.send ("The server is ruuning ")
+  res.send ("The server is running ")
 })
 
 app.listen (4000, ()=>{
