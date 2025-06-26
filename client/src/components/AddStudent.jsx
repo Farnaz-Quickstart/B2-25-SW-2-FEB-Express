@@ -19,7 +19,6 @@ export default function AddStudent() {
   }
 
   async function handleSubmit (event) {
-    console.log (formData)
     try {
           await axios.post ("http://localhost:4000/students/", {
           student_name: formData.student_name,

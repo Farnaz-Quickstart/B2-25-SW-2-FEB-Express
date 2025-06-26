@@ -4,6 +4,7 @@ import db from './dbConnections.js'
 import studentsRouts from './Routers/students.js'
 import coursesRouts from './Routers/courses.js'
 import enrollmentsRouts from './Routers/enrollments.js'
+import usersRouts from './Routers/users.js'
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use (cors())         // Allow all origins
 app.use ('/students', studentsRouts)
 app.use ('/courses', coursesRouts)
 app.use ('/enrollments', enrollmentsRouts)
-
+app.use ('/users', usersRouts)
 
 app.get ("/", (req,res)=> {
   res.send ("The server is running ")

@@ -1,15 +1,20 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ListStudents from './components/ListStudents';
-import AddStudent from './components/AddStudent';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from './Pages/HomePage'
+import LoginPage from './Pages/LoginPage'
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="App">
-
-      <AddStudent />
-      <ListStudents />
-    </div>
+    <BrowserRouter>
+    <NavBar />
+      <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
