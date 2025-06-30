@@ -22,6 +22,7 @@ export default function LoginPage() {
     // console.log (formData)
     try {
         console.log (formData.user_username)
+        
         const response = await axios.post ("http://localhost:4000/users/", {user_username:formData.user_username, user_password:formData.user_password})
         console.log (response)
     }

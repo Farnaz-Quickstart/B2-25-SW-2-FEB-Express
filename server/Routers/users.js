@@ -3,14 +3,13 @@ import db from '../dbConnections.js'
 
 const Router = express.Router()
 
-console.log ("Router users ....")
 Router.post ('/', async (req,res)=>{
+  console.log ("user router: select user ....")
   try {
-    console.log ("step 1 ....")
     const {user_username, user_password} = req.body
     console.log (user_username, user_password)
 
-    const [result] = await db.query ("SELECT * FROM users WHERE user_name= ? AND user_password=?", [user_username, user_password])
+    const [result] = await db.query ("SELECT * FROM users WHERE user_name = ? AND user_password = ?", [user_username, user_password])
     console.log (result)
     if (result.length == 0)
       res.status(404).json(result)
